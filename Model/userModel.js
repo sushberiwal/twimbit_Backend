@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { DB_CONFIG } = require("../Config/secrets");
+const { DB_CONFIG } = process.env;
 
 mongoose
   .connect(DB_CONFIG, { useNewUrlParser: true, useUnifiedTopology: true })

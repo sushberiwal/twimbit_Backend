@@ -3,6 +3,7 @@ const actionRouter = require("./Router/actionRouter");
 const postRouter = require("./Router/postRouter");
 const userRouter = require("./Router/userRouter");
 // const bodyParser = require("body-parser");
+const cors = require("cors");
 const app = express();
 
 // Bodyparser middleware
@@ -13,7 +14,8 @@ const app = express();
 //   );
 //   app.use(bodyParser.json());
 app.use(express.json());
-
+app.use(cors());
+app.use(express.static('public'));
 
 // // create user , login user
 app.use("/api/user" , userRouter);
