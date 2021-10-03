@@ -21,7 +21,7 @@ async function createPost(req , res){
 
 async function getAllPosts(req , res){
     try{
-        let allPosts = await postModel.find();
+        let allPosts = await postModel.find().sort({'date' : 'desc'});
         res.status(200).json({
             message:"All posts get succesfully !",
             data : allPosts

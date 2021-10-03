@@ -8,7 +8,7 @@ const { protect } = require("../Middleware/auth");
 
 const postRouter = express.Router();
 
-postRouter.route("/create").post(protect, createPost);
+postRouter.route("/create").post(createPost);
 postRouter.route("/get/:id").get(protect, getPostById);
 postRouter.route("/getall").get(getAllPosts);
 

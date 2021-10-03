@@ -22,7 +22,7 @@ let postSchema = new mongoose.Schema({
     type: [String],
   },
   comments: {
-    type: [{ createdBy: String, comment: String }],
+    type: [{ username: String, comment: String }],
   },
   date: {
     type: Date,
