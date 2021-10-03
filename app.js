@@ -27,4 +27,5 @@ app.use("/api/action" , actionRouter);
 // app.get("/" , (req ,res)=>{
 //     res.end("<h1>Welcome</h1>");
 // })
-app.listen(3000 , ()=> console.log("app is listening on port 3000 !"));
+let port = process.env.PORT || 3000;
+app.listen(port , ()=> console.log("app is listening on port 3000 !"));
