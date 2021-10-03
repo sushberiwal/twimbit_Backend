@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
+const { DB_CONFIG } = require("../Config/secrets");
+
 
 mongoose
-  .connect("mongodb+srv://admin:admin123@cluster0.zd8n8.mongodb.net/twimbit", {
+  .connect(DB_CONFIG, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
