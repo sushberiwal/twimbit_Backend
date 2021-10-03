@@ -1,9 +1,15 @@
 const express = require("express");
-const { createPost, deletePost } = require("../Controller/postController");
+const {
+  createPost,
+  getAllPosts,
+  getPostById,
+} = require("../Controller/postController");
+const { protect } = require("../Middleware/auth");
 
 const postRouter = express.Router();
 
-postRouter.route("/create").post(createPost);
-postRouter.route("/delete").post(deletePost);
+postRouter.route("/create").post(protect, createPost);
+postRouter.route("/get/:id").get(protect, getPostById);
+postRouter.route("/getall").get(getAllPosts);
 
 module.exports = postRouter;
